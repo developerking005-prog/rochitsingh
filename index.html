@@ -913,6 +913,7 @@ src="https://www.facebook.com/tr?id=1045271528573461&ev=PageView&noscript=1"
 
                 <!-- TOP TELEGRAM BUTTON -->
                 <a
+                  id="telegram-top-btn"
                   class="bs-btn"
                   href="https://t.me/+UG_iVb6SwAdlZGVl"
                   target="_blank"
@@ -960,6 +961,7 @@ src="https://www.facebook.com/tr?id=1045271528573461&ev=PageView&noscript=1"
 
                 <!-- BOTTOM TELEGRAM BUTTON -->
                 <a
+                  id="telegram-bottom-btn"
                   class="bs-btn"
                   href="https://t.me/+UG_iVb6SwAdlZGVl"
                   target="_blank"
@@ -974,6 +976,26 @@ src="https://www.facebook.com/tr?id=1045271528573461&ev=PageView&noscript=1"
         </div>
       </div>
     </div>
+    <!-- Telegram Button Meta Pixel Tracking -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var telegramButtons = document.querySelectorAll(
+          "#telegram-top-btn, #telegram-bottom-btn"
+        );
+
+        telegramButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            if (typeof window.fbq === "function") {
+              window.fbq("track", "Lead", {
+                content_name: "Telegram Join Button",
+                content_category: "Telegram"
+              });
+            }
+          });
+        });
+      });
+    </script>
+
     <script type="speculationrules">
       {
         "prefetch": [
